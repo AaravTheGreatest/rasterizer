@@ -1,9 +1,12 @@
 #pragma once
 
-/*#include <X11/Xlib.h>
+#include <X11/Xlib.h>
 #include <fb.h>
 
-Display* display = XOpenDisplay(nullptr);
-int screen = DefaultScreen(display);
-Window window = XCreateSimpleWindow(display, RootWindow(display, screen), 50, 50, 600, 800, 2, BlackPixel(display, screen),WhitePixel(display, screen));
-*/
+#include <vector>
+
+int drawTriangle(Display* display, int screen, Window& window, const int* verts, int startIndex, int numIndices);
+int drawTriangle(Display* display, int screen, Window& window, int x1, int y1, int x2, int y2, int x3, int y3);
+int drawTriangle(Display* display, int screen, Window& window, std::vector<int>& verts, int startIndex, int numIndices);
+
+
