@@ -1,8 +1,3 @@
-/*
- * Copyright (C) 2026 Aarav Yadav
- * Licensed under GPL-3.0-or-later
- */
-
 #include <draw.h>
 #include <fb.h>
 
