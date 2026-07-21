@@ -1,13 +1,13 @@
 #include <color.h>
 
 uint32_t Color::pack() const {
-  return ((int)(a * 255) << 24) | ((int)(r * 255) << 16) | ((int)(g * 255) << 8) | (int)(b * 255);
+  return ((int)(rgba.w * 255) << 24) | ((int)(rgba.x * 255) << 16) | ((int)(rgba.y * 255) << 8) | (int)(rgba.z * 255);
 }
 Color Color::operator*(float t) const {
-  return Color(r * t, g * t, b * t, a * t);
+  return Color(rgba.x * t, rgba.y * t, rgba.z * t, rgba.w * t);
 }
 Color Color::operator+(const Color& other) const {
-  return Color(r + other.r, g + other.g, b + other.b, a + other.a);
+  return Color(rgba + other.rgba);
 }
 Color Color::lerp(const Color& other, float t) const {
   return (*this) * (1.0f - t) + other * t;
