@@ -4,15 +4,18 @@ LDLIBS = -lX11
 
 SRC = src/fb.cpp src/draw.cpp
 
-all:
+all: build
 	$(CXX) -o build/main src/*.cpp $(CXXFLAGS) $(LDLIBS)
 
 EXAMPLE ?= rect
 
-example:
+example: build
 	$(CXX) -o build/$(EXAMPLE) examples/$(EXAMPLE).cpp $(SRC) $(CXXFLAGS) $(LDLIBS)
 
 clean:
 	rm -rf build/*
 
-.PHONY: all example clean
+build:
+	mkdir -p build
+
+.PHONY: all example clean build
