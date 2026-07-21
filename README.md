@@ -1,12 +1,13 @@
 # rasterizer
 
 A simple software rasterizer written from scratch in C++.  
-Supports 2D primitive shapes with a custom X11 framebuffer.  
-Plan to implement 3D rendering and support for Wayland as well in the future  
+Supports 2D primitive shapes with a custom framebuffer.  
+Plan to implement 3D rendering in the future  
 
 ## Current features
 
-- X11 output using XImages from a custom framebuffer  
+- Graphical output from a custom framebuffer  
+- SFML window creation to allow compatibility with any OS  
 - Keyboard and window events (keysym from X11)  
 - Dynamic resizing of the framebuffer based on window size  
 - Line drawing  
@@ -27,8 +28,7 @@ Requires:
 
 - `make`  
 - C++ compiler  
-- X11 development libraries  
-
+- Either SFML-3.x or X11 development libraries  
 Clone repo:  
 
 ```bash
@@ -45,7 +45,9 @@ cd rasterizer && make example EXAMPLE=name
 
 For example, `make example EXAMPLE=rect` would build examples/rect.cpp
 
-`make example` defaults to rect.cpp
+`make example` defaults to rect.cpp  
+
+For SFML examples, run `make sfml`  
 
 Run:  
 
